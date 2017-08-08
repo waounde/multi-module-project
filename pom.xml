@@ -21,6 +21,18 @@
 		</dependency>
 	</dependencies>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-pluing</artifactId>
+				<version>3.2</version>
+			</plugin>
+		</plugins>
+		
+	</build>
+	
+	
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
