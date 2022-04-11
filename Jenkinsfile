@@ -1,7 +1,5 @@
 #!/usr/bin/env groovy
 
-def imageId = "use-name/image-name:1.$BUILD_NUMBER"
-
 pipeline {
 
     agent {
@@ -25,14 +23,14 @@ pipeline {
         stage('package') {
             steps {
                 script {
-                    sh "docker build --target final -t ${imageId} ."
+                    sh "mvn package"
                 }
             }
         }
         stage('Install') {
             steps {
                 script {
-                    sh "docker build --target final -t ${imageId} ."
+                    sh "mvn install"
                 }
             }
         }
