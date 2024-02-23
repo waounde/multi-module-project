@@ -23,7 +23,7 @@ pipeline {
         stage('package') {
             steps {
                 script {
-                    sh "mvn package assembly:singl "
+                    sh "mvn package assembly:single"
                 }
             }
         }
