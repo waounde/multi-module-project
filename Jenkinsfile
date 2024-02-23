@@ -37,7 +37,7 @@ pipeline {
         stage('Execute') {
             steps {
                 script {
-                    sh "java -cp /tmp/workspace/docker-slave-sanchez/backend/target/:/tmp/workspace/docker-slave-sanchez/frontend/target/ -jar /tmp/workspace/docker-slave-sanchez/main/target/main-1.0.0-SNAPSHOT.jar"
+                    sh "java -jar main/target/main-1.0.0-SNAPSHOT-jar-with-dependencies.jar"
                 }
             }
         }
