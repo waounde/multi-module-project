@@ -1,4 +1,4 @@
-package org.tektutor;
+package org.tektutor.main;
 
 import org.tektutor.frontend.*;
 import org.tektutor.backend.*;
