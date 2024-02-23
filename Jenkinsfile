@@ -3,7 +3,7 @@
 pipeline {
 
     agent {
-        label 'jenkins-slave-node'
+        docker('jenkins-slave-node')
     }
     stages {
         stage('Compile') {
