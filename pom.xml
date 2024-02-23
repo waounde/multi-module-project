@@ -36,7 +36,7 @@
 			          <archive>
 			            <manifest>
 			              <addClasspath>true</addClasspath>
-			              <mainClass>fully.qualified.MainClass</mainClass>
+			              <mainClass>org.tutor.MainClass</mainClass>
 			            </manifest>
 			          </archive>
 			        </configuration>
