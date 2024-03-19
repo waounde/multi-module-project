@@ -37,13 +37,13 @@ pipeline {
                 }
             }
         }
-      stage('Execute') {
-    steps {
-        script {
-            sh "java -jar /tmp/workspace/docker-jenkons/main/target/main-1.0.0-SNAPSHOT.jar"
+        stage('Execute') {
+            steps {
+                script {
+                    // Exécute le JAR généré
+                    sh "java -jar /tmp/workspace/docker-jenkons/main/target/main-1.0.0-SNAPSHOT.jar"
+                }
+            }
         }
-    }
-}
-
     }
 }
