@@ -1,7 +1,6 @@
-//#!/usr/bin/env groovy
+#!/usr/bin/env groovy
 
 pipeline {
-
     agent {
         label('jenkins-slave-docker-node')
     }
@@ -9,6 +8,7 @@ pipeline {
         stage('Compile') {
             steps {
                 script {
+                    // Compile le projet avec Maven
                     sh "mvn clean compile"
                 }
             }
@@ -16,13 +16,15 @@ pipeline {
         stage('Unit Test') {
             steps {
                 script {
+                    // Exécute les tests unitaires avec Maven
                     sh "mvn test"
                 }
             }
         }
-        stage('package') {
+        stage('Package') {
             steps {
                 script {
+                    // Crée le package JAR avec Maven (avec toutes les dépendances incluses)
                     sh "mvn package assembly:single"
                 }
             }
@@ -30,9 +32,18 @@ pipeline {
         stage('Install') {
             steps {
                 script {
+                    // Installe le package dans le dépôt local Maven
                     sh "mvn install"
                 }
-           }    
-        }  
+            }
+        }
+        stage('Execute') {
+            steps {
+                script {
+                    // Exécute le JAR généré avec toutes les dépendances
+                    sh "java -jar /tmp/workspace/docker-slave-sanchez/main/target/main-1.0.0-SNAPSHOT-jar-with-dependencies.jar"
+                }
+            }
+        }
     }
 }
