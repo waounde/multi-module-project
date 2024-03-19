@@ -41,7 +41,7 @@ pipeline {
             steps {
                 script {
                     // Exécute le JAR généré avec toutes les dépendances
-                    sh "java -jar /tmp/workspace/docker-jenkons/backend/target/backend-1.0.0-SNAPSHOT.jar"
+                    sh "java -jar /tmp/workspace/docker-jenkons/backend/main/target/backend-1.0.0-SNAPSHOT.jar"
                 }
             }
         }
